@@ -29,9 +29,7 @@ const Header = async (props: Props) => {
           ) : (
             <Link href={"/pricing"}>Pricing</Link>
           )}
-          {/* dark mode */}
           <DarkModeToggle />
-          {/* user button */}
           <UserButton session={session} />
         </div>
       </nav>
