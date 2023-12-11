@@ -1,4 +1,4 @@
-import { NextAuthOptions } from "next-auth";
+import { NextAuthOptions, getServerSession } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -8,3 +8,6 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
 } satisfies NextAuthOptions;
+
+export const getServerSessionCustom = async () =>
+  await getServerSession(authOptions);
