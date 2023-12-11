@@ -8,7 +8,7 @@ type Props = {};
 const Logo = (props: Props) => {
   return (
     <Link href="/" prefetch={false} className="overflow-hidden">
-      <div className="flex items-center w-72 h-16 mt-1">
+      <div className="flex items-center w-64 h-16">
         <AspectRatio
           ratio={16 / 9}
           className="flex items-center justify-center"
