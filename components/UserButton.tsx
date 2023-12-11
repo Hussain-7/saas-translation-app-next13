@@ -12,6 +12,7 @@ import UserAvatar from "./UserAvatar";
 type Props = {};
 
 const UserButton = (props: Props) => {
+	// session..
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
