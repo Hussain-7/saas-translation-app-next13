@@ -1,7 +1,7 @@
 import { CheckIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
-import CheckButton from "./CheckButton";
+import CheckoutButton from "./CheckButton";
 const tiers = [
   {
     name: "Starter",
@@ -100,7 +100,7 @@ const PricingCards = ({ redirect }: { redirect: boolean }) => {
                 Get Started Today
               </Link>
             ) : (
-              tier.id && <CheckButton />
+              tier.id && <CheckoutButton />
             )}
           </div>
         ))}

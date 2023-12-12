@@ -1,9 +1,9 @@
 import React from 'react'
 
-const CheckButton = () => {
+const CheckoutButton = () => {
 	return (
 		<div>CheckButton</div>
 	)
 }
 
-export default CheckButton
+export default CheckoutButton
