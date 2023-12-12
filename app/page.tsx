@@ -25,15 +25,17 @@ export default function Home() {
         <div className="py-12 sm:py-20 lg:pb-40">
           <div className="mx-auto max-w-7xl 1 px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
+              <h1 className="text-3xl font-bold tracking-tight sm:text-6xl">
                 Chat with Anyone, anywhere!
               </h1>
-              <div className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-                <p>You speak your language, they speak their language.{""}</p>
-                <p className="text-indigo-600 dark:text-indigo-500">
+              <div className="mt-6 text-sm sm:text-lg leading-6 sm:leading-8 text-gray-600 dark:text-gray-300 flex flex-col">
+                <span>
+                  You speak your language, they speak their language.{""}
+                </span>
+                <span className="text-indigo-600 dark:text-indigo-500 ">
                   {" "}
                   Let AI handle the translation.
-                </p>
+                </span>
               </div>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <Link
