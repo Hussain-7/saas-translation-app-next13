@@ -2,6 +2,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Link from "next/link";
 import Screenshot from "@/images/landingPage/screenshot.gif";
+import { ArrowRightCircleIcon, ArrowRightIcon } from "lucide-react";
 export default function Home() {
   return (
     <main className="">
@@ -43,9 +44,10 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/pricing"
-                  className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-300"
+                  className="text-sm font-semibold text-gray-900 dark:text-gray-300 flex flex-row space-x-1 items-center justify-center"
                 >
-                  View Pricing <span aria-hidden="true"></span>
+                  <div className="">View Pricing </div>
+                  <ArrowRightIcon className="w-4 h-4 mt-2" />
                 </Link>
               </div>
             </div>
