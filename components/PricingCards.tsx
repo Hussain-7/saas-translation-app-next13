@@ -5,7 +5,7 @@ import CheckoutButton from "./CheckButton";
 const tiers = [
   {
     name: "Starter",
-    id: "starter",
+    id: "",
     href: "#",
     priceMonthly: null,
     description: "Get chatting right away with anyone, anywhere!",
@@ -93,9 +93,7 @@ const PricingCards = ({ redirect }: { redirect: boolean }) => {
             {redirect ? (
               <Link
                 href="/register"
-                className="mt-8 block rounded-md text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline-2 focus-visible: outline-offset-2 cursor-pointer disabled: opacity-80 bg-indigo-600 px-3.5 py-2 text-center hover:bg-indigo-500 focus-visible: outline focus-visible:outline-indigo-600
-							
-							"
+                className="mt-8 block rounded-md text-sm font-semibold leading-6 text-white shadow-sm focus-visible:outline-2 focus-visible: outline-offset-2 cursor-pointer disabled: opacity-80 bg-indigo-600 px-3.5 py-2 text-center hover:bg-indigo-500 focus-visible: outline focus-visible:outline-indigo-600"
               >
                 Get Started Today
               </Link>
