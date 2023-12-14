@@ -11,6 +11,24 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
   ],
+  callbacks: {
+    jwt: async ({ user, token }) => {
+      if (user) {
+        // we need the userid for the account in the token as well
+        token.uid = user.id;
+      }
+      return token;
+    },
+    session: async ({ session, token }) => {
+      // Now we need to pull the userid out of the token and add it to the session
+      if (session?.user) {
+        if (token.sub) {
+          session.user.id = token.sub;
+        }
+      }
+      return session;
+    },
+  },
   session: {
     strategy: "jwt",
   },
