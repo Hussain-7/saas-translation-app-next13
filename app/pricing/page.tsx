@@ -1,7 +1,9 @@
+import { getServerSessionCustom } from "@/auth";
 import PricingCards from "@/components/PricingCards";
 import React from "react";
 
-const PricingPage = () => {
+const PricingPage = async () => {
+
   return (
     <>
       <div className="isolate overflow-hidden bg-gray-900">
