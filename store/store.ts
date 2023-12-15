@@ -28,11 +28,11 @@ export const LanguagesSupportedMap: Record<LanguagesSupported, string> = {
 };
 
 interface SubscriptionState {
-  subscription: Subscription | null;
+  subscription: Subscription | null | undefined;
   setSubscription: (sub: Subscription | null) => void;
 }
 
 export const useSubscriptionStore = create<SubscriptionState>((set) => ({
-  subscription: null,
+  subscription: undefined,
   setSubscription: (subscription) => set({ subscription }),
 }));

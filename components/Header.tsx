@@ -7,12 +7,13 @@ import { getServerSessionCustom } from "@/auth";
 import Link from "next/link";
 import { MessagesSquareIcon } from "lucide-react";
 import CreateChatButton from "./CreateChatButton";
+import { useSubscriptionStore } from "@/store/store";
+import UpgradeBanner from "./UpgradeBanner";
 
 type Props = {};
 
 const Header = async (props: Props) => {
   // Render landing & pricing page seperate route from normal one without auth and statically generate it
-
   const session = await getServerSessionCustom();
   console.log("session", session);
   return (
@@ -36,6 +37,7 @@ const Header = async (props: Props) => {
         </div>
       </nav>
       {/* upgrade banner */}
+      <UpgradeBanner />
     </header>
   );
 };
