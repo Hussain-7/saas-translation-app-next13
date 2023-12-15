@@ -2,6 +2,7 @@
 import { SessionProvider } from "next-auth/react";
 import React from "react";
 import FirebaseAuthProvider from "./FirebaseAuthProvider";
+import SubscriptionProvider from "./SubscriptionProvider";
 
 type Props = {
   children: React.ReactNode;
@@ -10,7 +11,9 @@ type Props = {
 const ClientProviders = ({ children }: Props) => {
   return (
     <SessionProvider>
-      <FirebaseAuthProvider>{children}</FirebaseAuthProvider>
+      <FirebaseAuthProvider>
+        <SubscriptionProvider>{children}</SubscriptionProvider>
+      </FirebaseAuthProvider>
     </SessionProvider>
   );
 };

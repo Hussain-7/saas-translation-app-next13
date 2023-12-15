@@ -58,3 +58,5 @@ export const subscriptionRef = (userId: string) =>
   collection(db, "customer", userId, "subscriptions").withConverter(
     subscriptionConverter
   );
+
+// Normally when we pull from firebase there is no type saftey so this way pull and push to firebase doubles as a type safe way
