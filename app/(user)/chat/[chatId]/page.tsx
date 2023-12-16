@@ -1,9 +1,20 @@
 import { getServerSessionCustom } from "@/auth";
+import ChatInput from "@/components/ChatInput";
 import React from "react";
 
-type Props = {};
+type Props = {
+  params: {
+    chatId: string;
+  };
+  searchParams: {
+    error: string;
+  };
+};
 
-const ChatPage = async (props: Props) => {
+const ChatPage = async ({
+  params: { chatId },
+  searchParams: { error },
+}: Props) => {
   const session = await getServerSessionCustom();
   return (
     <>
@@ -11,6 +22,7 @@ const ChatPage = async (props: Props) => {
       {/* Chatmembers */}
       {/* Chat messages */}
       {/* Chat input */}
+      <ChatInput chatId={chatId} />
     </>
   );
 };
