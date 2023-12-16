@@ -9,6 +9,7 @@ import { MessagesSquareIcon } from "lucide-react";
 import CreateChatButton from "./CreateChatButton";
 import { useSubscriptionStore } from "@/store/store";
 import UpgradeBanner from "./UpgradeBanner";
+import LanguageSelect from "./LanguageSelect";
 
 type Props = {};
 
@@ -22,6 +23,7 @@ const Header = async (props: Props) => {
         <Logo />
         <div className="flex-1 flex items-center justify-end space-x-4">
           {/* language select */}
+          <LanguageSelect />
           {session ? (
             <>
               <Link href={"/chat"} prefetch={false}>

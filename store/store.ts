@@ -27,6 +27,8 @@ export const LanguagesSupportedMap: Record<LanguagesSupported, string> = {
   ar: "Arabic",
 };
 
+const LANGUAGES_IN_FREE = 2;
+
 interface LanguageState {
   language: LanguagesSupported;
   setLanguage: (lang: LanguagesSupported) => void;
@@ -43,7 +45,7 @@ export const useLanguageStore = create<LanguageState>((set) => ({
     }
     return Object.keys(LanguagesSupportedMap).slice(
       0,
-      2
+      LANGUAGES_IN_FREE
     ) as LanguagesSupported[];
   },
   getNotSupportedLanguages: (isPro) => {
