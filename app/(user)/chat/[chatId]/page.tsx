@@ -1,12 +1,12 @@
+import { getServerSessionCustom } from "@/auth";
 import React from "react";
 
 type Props = {};
 
-const ChatPage = (props: Props) => {
+const ChatPage = async (props: Props) => {
+  const session = await getServerSessionCustom();
   return (
     <>
-      CHAT HERE
-      {/*  */}
       {/* Admin Controls */}
       {/* Chatmembers */}
       {/* Chat messages */}
