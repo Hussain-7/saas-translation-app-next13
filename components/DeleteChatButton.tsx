@@ -29,6 +29,7 @@ const DeleteChatButton = ({ chatId }: Props) => {
     chatId,
   });
   const handleDelete = async () => {
+    if (adminId !== session?.user?.id) return;
     toast({
       title: "Deleting chat",
       description: "Please wait while we delete the chat...",
@@ -60,7 +61,7 @@ const DeleteChatButton = ({ chatId }: Props) => {
     session?.user?.id === adminId && (
       <Dialog open={open} onOpenChange={setOpen} defaultOpen={open}>
         <DialogTrigger asChild>
-          <Button variant="destructive">Clear Chat</Button>
+          <Button variant="destructive">Delete Chat</Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>

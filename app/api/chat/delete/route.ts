@@ -1,8 +1,18 @@
+import { getServerSessionCustom } from "@/auth";
 import { adminDb } from "@/firebase-admin";
+import { chatMemberAdminRef } from "@/lib/convertors/ChatMembers";
+import { getDocs } from "firebase/firestore";
 import { NextResponse } from "next/server";
 
 export async function DELETE(req: Request) {
   const { chatId } = await req.json();
+  const adminId = (await getDocs(chatMemberAdminRef(chatId))).docs.map(
+    (doc) => doc.id
+  )[0];
+  const session = await getServerSessionCustom();
+  if (!session || session?.user?.id !== adminId) {
+    return NextResponse.json({ success: false }, { status: 401 });
+  }
   const ref = adminDb.collection("chats").doc(chatId);
   const bulkWriter = adminDb.bulkWriter();
   const MAX_RETRY_ATTEMPTS = 5;
