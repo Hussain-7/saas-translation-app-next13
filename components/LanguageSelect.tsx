@@ -5,7 +5,7 @@ import {
   useSubscriptionStore,
 } from "@/store/store";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Select,
   SelectContent,
@@ -19,18 +19,31 @@ import Link from "next/link";
 type Props = {};
 
 const LanguageSelect = (props: Props) => {
-  const { language, setLanguage, getLanguages, getNotSupportedLanguages } =
-    useLanguageStore();
+  const [language, setLanguage, getLanguages, getNotSupportedLanguages] =
+    useLanguageStore((state) => [
+      state.language,
+      state.setLanguage,
+      state.getLanguages,
+      state.getNotSupportedLanguages,
+    ]);
   const { subscription } = useSubscriptionStore();
   const isPro =
     subscription?.role === "pro" && subscription?.status === "active";
   const pathName = usePathname();
   const isChatPage = pathName.includes("/chat");
-  console.log("language", language);
+  console.log("language", language, setLanguage);
+  useEffect(() => {
+    console.log("selected", language);
+  }, [language]);
 
   return (
     isChatPage && (
-      <Select>
+      <Select
+        onValueChange={(value) => {
+          console.log("value", value);
+          setLanguage(value);
+        }}
+      >
         <SelectTrigger className="w-[150px] text-black dark:text-white">
           <SelectValue placeholder={LanguagesSupportedMap[language]} />
         </SelectTrigger>
@@ -42,7 +55,6 @@ const LanguageSelect = (props: Props) => {
               {getLanguages(isPro).map((lang, i) => (
                 <SelectItem
                   key={lang}
-                  onClick={() => setLanguage(lang)}
                   className="flex items-center"
                   value={lang}
                 >
@@ -55,7 +67,6 @@ const LanguageSelect = (props: Props) => {
                 <Link href="/register" key={lang} prefetch={false}>
                   <SelectItem
                     key={i}
-                    onClick={() => setLanguage(lang)}
                     className="bg-gray-300/50 text-gray-500 dark:text-white py-2 my-1"
                     disabled
                     value={lang}
