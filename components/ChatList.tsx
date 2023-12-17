@@ -16,7 +16,6 @@ const ChatList = async (props: Props) => {
     // Setting time stamp to null since we cannot pass Object with tojson method to client components from server components
     timestamp: null,
   }));
-  console.log("initialChats", initialChats);
   return <ChatListRows initialChats={initialChats} />;
 };
 

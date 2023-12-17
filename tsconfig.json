@@ -23,6 +23,6 @@
       "@logos/*": ["./images/logos/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "tailwind.config.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "tailwind.config.ts", "hooks/useAdminId.tsx"],
   "exclude": ["node_modules"]
 }

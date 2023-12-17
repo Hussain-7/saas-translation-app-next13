@@ -49,6 +49,7 @@ const ChatMessages = ({ chatId, session, initialMessages }: Props) => {
 
       {messages?.map((message) => {
         const isSender = message.user.id === session?.user.id;
+
         return (
           <div className="flex my-2 items-end" key={message.id}>
             <div
