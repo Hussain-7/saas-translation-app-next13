@@ -1,5 +1,6 @@
 "use client";
 import {
+  LanguagesSupported,
   LanguagesSupportedMap,
   useLanguageStore,
   useSubscriptionStore,
@@ -39,8 +40,7 @@ const LanguageSelect = (props: Props) => {
   return (
     isChatPage && (
       <Select
-        onValueChange={(value) => {
-          console.log("value", value);
+        onValueChange={(value: LanguagesSupported) => {
           setLanguage(value);
         }}
       >
