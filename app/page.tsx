@@ -4,6 +4,7 @@ import Link from "next/link";
 import Screenshot from "@/images/landingPage/screenshot.gif";
 import { ArrowRightCircleIcon, ArrowRightIcon } from "lucide-react";
 export default function Home() {
+  
   return (
     <main className="">
       <div className="relative isolate pt-14 dark:bg-gray-900">
