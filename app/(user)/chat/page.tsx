@@ -1,12 +1,21 @@
 import ChatList from "@/components/ChatList";
+import ChatPersmissionError from "@/components/ChatPersmissionError";
 import React from "react";
-type Props = {};
+type Props = {
+  params: {};
+  searchParams: {
+    error: string;
+  };
+};
 
-const ChatsPage = (props: Props) => {
+const ChatsPage = ({ searchParams: { error } }: Props) => {
   return (
     <div>
-      {/* Chat permission Error */}
-      {/* Chat List */}
+      {error && (
+        <div>
+          <ChatPersmissionError />
+        </div>
+      )}
       <ChatList />
     </div>
   );

@@ -6,6 +6,7 @@ import ChatMessages from "@/components/ChatMessages";
 import { chatMembersRef } from "@/lib/convertors/ChatMembers";
 import { sortedMessageRef } from "@/lib/convertors/Message";
 import { getDocs } from "firebase/firestore";
+import { redirect } from "next/navigation";
 import React from "react";
 
 type Props = {
@@ -26,6 +27,13 @@ const ChatPage = async ({
     (doc) => doc.data()
   );
 
+  const hasAccess = (await getDocs(chatMembersRef(chatId))).docs
+    .map((doc) => doc.id)
+    .includes(session?.user.id!);
+
+  if (!hasAccess) {
+    redirect("/chat?error=permission");
+  }
   return (
     <>
       <AdminControls chatId={chatId} />
