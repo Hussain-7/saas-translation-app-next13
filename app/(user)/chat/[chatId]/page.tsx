@@ -1,4 +1,5 @@
 import { getServerSessionCustom } from "@/auth";
+import AdminControls from "@/components/AdminControls";
 import ChatInput from "@/components/ChatInput";
 import ChatMembersBadges from "@/components/ChatMembersBadges";
 import ChatMessages from "@/components/ChatMessages";
@@ -27,8 +28,7 @@ const ChatPage = async ({
 
   return (
     <>
-      {/* Admin Controls */}
-      {/* ChatmembersBadge */}
+      <AdminControls chatId={chatId} />
       <ChatMembersBadges chatId={chatId} />
       <div className="flex-1">
         {/* Time stamp is causing issue here need to fix it later on! */}
