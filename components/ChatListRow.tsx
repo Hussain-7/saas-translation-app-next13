@@ -20,6 +20,7 @@ const ChatListRow = ({ chatId }: Props) => {
   );
   console.log("messages", messages);
   const lastMessage = messages?.[0];
+
   function prettyUUID(n = 4) {
     return chatId.substring(0, n);
   }
@@ -41,7 +42,6 @@ const ChatListRow = ({ chatId }: Props) => {
         </p>
         <p className="text-gray-400-line-clamp-1">
           {message?.translated?.[language] || "Get the conversation started..."}
-          {/* Get the conversation started... */}
         </p>
       </div>
       <div className="text-xs text-gray-400 text-right">

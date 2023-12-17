@@ -4,6 +4,7 @@
 import { db } from "@/firebase";
 import { LanguagesSupported } from "@/store/store";
 import { Subscription } from "@/types/Subscription";
+import { Timestamp } from "firebase-admin/firestore";
 import {
   DocumentData,
   FirestoreDataConverter,
@@ -55,7 +56,7 @@ const messageConvertor: FirestoreDataConverter<Message> = {
     return {
       id: snapshot.id,
       input: data.input,
-      timestamp: data.timestamp,
+      timestamp: data?.timestamp?.toDate(),
       translated: data.translated,
       user: data.user,
     };
