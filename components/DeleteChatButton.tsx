@@ -61,7 +61,9 @@ const DeleteChatButton = ({ chatId }: Props) => {
     session?.user?.id === adminId && (
       <Dialog open={open} onOpenChange={setOpen} defaultOpen={open}>
         <DialogTrigger asChild>
-          <Button variant="destructive">Delete Chat</Button>
+          <Button variant="destructive" className="text-xs sm:text-base">
+            Delete Chat
+          </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>

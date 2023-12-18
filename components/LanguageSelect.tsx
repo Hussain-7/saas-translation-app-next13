@@ -44,7 +44,7 @@ const LanguageSelect = (props: Props) => {
           setLanguage(value);
         }}
       >
-        <SelectTrigger className="w-[150px] text-black dark:text-white">
+        <SelectTrigger className="w-[120px] sm:w-[150px] text-black dark:text-white">
           <SelectValue placeholder={LanguagesSupportedMap[language]} />
         </SelectTrigger>
         <SelectContent>

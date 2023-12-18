@@ -140,7 +140,7 @@ const InviteUser = ({ chatId }: Props) => {
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
             <Button variant="outline">
-              <PlusCircleIcon className="mr-1" />
+              <PlusCircleIcon className="mr-1 text-xs sm:text-base" />
               Add User
             </Button>
           </DialogTrigger>

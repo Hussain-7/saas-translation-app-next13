@@ -51,7 +51,7 @@ const ShareLink = ({ isOpen, setIsOpen, chatId }: Props) => {
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Share link</DialogTitle>
+          <DialogTitle className="text-xs sm:text-base">Share link</DialogTitle>
           <DialogDescription>
             Any user who has been{" "}
             <span className="text-indigo-600 font-bold">granted access</span>{" "}
