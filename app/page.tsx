@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Header from "@/components/Header";
 import Link from "next/link";
-import Screenshot from "@/images/landingPage/screenshot.gif";
+import Screenshot from "@/images/landingPage/Video_V3.gif";
 import { ArrowRightCircleIcon, ArrowRightIcon } from "lucide-react";
 export default function Home() {
   return (
@@ -55,13 +55,20 @@ export default function Home() {
             </div>
             <div className="mt-16 flow-root sm:mt-24">
               <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg: rounded-2x1 lg:p-4">
-                <Image
+                {/* <Image
                   unoptimized
                   src={Screenshot}
                   alt="App Screenshots"
                   width={2432}
                   height={1368}
                   className="rounded-md shadow-2xl ring-1 ring-gray-900/10"
+                /> */}
+                <video
+                  src={"/video_final.mp4"}
+                  className="w-full"
+                  autoPlay
+                  loop
+                  muted
                 />
               </div>
             </div>
