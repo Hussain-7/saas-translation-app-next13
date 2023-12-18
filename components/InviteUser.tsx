@@ -141,7 +141,7 @@ const InviteUser = ({ chatId }: Props) => {
           <DialogTrigger asChild>
             <Button variant="outline">
               <PlusCircleIcon className="mr-1" />
-              Add User to Chat
+              Add User
             </Button>
           </DialogTrigger>
           <DialogContent className="sm:max-w-md">
