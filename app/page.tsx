@@ -4,13 +4,12 @@ import Link from "next/link";
 import Screenshot from "@/images/landingPage/screenshot.gif";
 import { ArrowRightCircleIcon, ArrowRightIcon } from "lucide-react";
 export default function Home() {
-  
   return (
     <main className="">
-      <div className="relative isolate pt-14 dark:bg-gray-900">
+      <div className="relative isolate pt-6 sm:pt-14 dark:bg-gray-900">
         {/* Background Design Ball */}
         <div
-          className="absolute inset-x-0 top-28 -z-10 transform-gpu overflow-hidden blur-3xl"
+          className="absolute inset-x-0 top-10 sm:top-28 -z-10 transform-gpu overflow-hidden blur-3xl"
           aria-hidden="true"
         >
           <div
@@ -23,7 +22,7 @@ export default function Home() {
         </div>
         {/* Background Design Ball End*/}
 
-        <div className="py-12 sm:py-20 lg:pb-40">
+        <div className="py-6 sm:py-20 lg:pb-40">
           <div className="mx-auto max-w-7xl 1 px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h1 className="text-3xl font-bold tracking-tight sm:text-6xl">
