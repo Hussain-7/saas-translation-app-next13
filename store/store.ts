@@ -4,6 +4,7 @@ import { Subscription } from "@/types/Subscription";
 
 export type LanguagesSupported =
   | "en"
+  | "ur"
   | "de"
   | "fr"
   | "es"
@@ -12,12 +13,11 @@ export type LanguagesSupported =
   | "la"
   | "ru"
   | "zh"
-  | "ar"
-  | "ur";
+  | "ar";
 
-  
 export const LanguagesSupportedMap: Record<LanguagesSupported, string> = {
   en: "English",
+  ur: "Urdu",
   de: "German",
   fr: "French",
   es: "Spanish",
@@ -27,7 +27,6 @@ export const LanguagesSupportedMap: Record<LanguagesSupported, string> = {
   ru: "Russian",
   zh: "Mandarin",
   ar: "Arabic",
-  ur: "Urdu",
 };
 
 const LANGUAGES_IN_FREE = 2;
